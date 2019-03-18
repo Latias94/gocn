@@ -2,12 +2,12 @@ package dingding
 
 import (
 	"fmt"
-	"gocn/config"
 	"gocn/db"
 	"gocn/message"
 	"strings"
 	"time"
 )
+var Rss string
 
 func buildMessage(msg message.Message) string {
 	str := fmt.Sprintf("## %s", msg.DailyTitle)
@@ -43,8 +43,6 @@ func buildMessage(msg message.Message) string {
 }
 
 func Send() {
-	ding := Ding{AccessToken: config.Config.GetString("dingding.token")}
-
 	for {
 		msg, err := message.Pop()
 		if err != nil {
@@ -55,8 +53,9 @@ func Send() {
 			db.Push(msg.DailyTitle)
 			content := buildMessage(msg)
 			db.PushMarkdown(content)
-			markdown := Markdown{Title: "GoCN每日新闻", Content: content}
-			ding.Send(markdown)
+			markdown := Markdown{Title: msg.DailyTitle, Content: content}
+			Rss = GenerateRSS(RSSContent{Message: msg, Markdown: markdown})
+			// ding.Send(markdown)
 			time.Sleep(time.Second * 1)
 		}
 	}

@@ -3,6 +3,7 @@ module gocn
 go 1.12
 
 require (
+	github.com/BurntSushi/toml v0.3.1 // indirect
 	github.com/PuerkitoBio/goquery v1.4.1 // indirect
 	github.com/andybalholm/cascadia v1.0.0 // indirect
 	github.com/antchfx/htmlquery v0.0.0-20180726134113-496ad84c8a0c // indirect
@@ -12,11 +13,13 @@ require (
 	github.com/go-playground/universal-translator v0.0.0-20170327191703-71201497bace // indirect
 	github.com/gobwas/glob v0.0.0-20180809073612-f756513aec94 // indirect
 	github.com/gocolly/colly v1.0.0
+	github.com/gorilla/feeds v1.1.0
 	github.com/kennygrant/sanitize v1.2.4 // indirect
 	github.com/saintfish/chardet v0.0.0-20120816061221-3af4cd4741ca // indirect
 	github.com/spf13/viper v1.3.2
 	github.com/temoto/robotstxt v0.0.0-20180810133444-97ee4a9ee6ea // indirect
 	golang.org/x/sync v0.0.0-00010101000000-000000000000 // indirect
+	golang.org/x/sys v0.0.0-20190222072716-a9d3bda3a223 // indirect
 	google.golang.org/appengine v0.0.0-00010101000000-000000000000 // indirect
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 	gopkg.in/go-playground/validator.v9 v9.21.0

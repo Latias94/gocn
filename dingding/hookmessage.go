@@ -1,5 +1,7 @@
 package dingding
 
+import "gocn/message"
+
 //Package dinghook 详情参见 https://open-doc.dingtalk.com/docs/doc.htm?spm=a219a.7629140.0.0.karFPe&treeId=257&articleId=105735&docType=1
 const (
 	// MsgTypeText text 类型
@@ -35,4 +37,9 @@ type Markdown struct {
 type SimpleMessage struct {
 	Content string
 	Title   string
+}
+
+type RSSContent struct {
+	Message  message.Message
+	Markdown Markdown
 }
